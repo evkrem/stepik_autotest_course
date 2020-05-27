@@ -1,3 +1,3 @@
 # stepik_autotest_course
-homework
-Будем тут скрипты хранить
+Work home
+Будем тут тренировать навыки автоматизации
