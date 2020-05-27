@@ -1,2 +1,3 @@
 # stepik_autotest_course
-homeword
+homework
+Будем тут скрипты хранить
