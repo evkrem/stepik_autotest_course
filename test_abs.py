@@ -1,9 +1,7 @@
-import unittest
 from selenium import webdriver
 import time
-
-class TestAbs(unittest.TestCase):
-    def test_abs1(self):
+def test_abs1():
+    try:
         link = "http://suninjuly.github.io/registration1.html"
         browser = webdriver.Chrome()
         browser.get(link)
@@ -32,8 +30,14 @@ class TestAbs(unittest.TestCase):
 
         # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
         assert "Congratulations! You have successfully registered!" == welcome_text
+    finally:
+        # ожидание чтобы визуально оценить результаты прохождения скрипта
+        time.sleep(1)
+        # закрываем браузер после всех манипуляций
+        browser.quit()
 
-    def test_abs2(self):
+def test_abs2():
+    try:
         link = "http://suninjuly.github.io/registration2.html"
         browser = webdriver.Chrome()
         browser.get(link)
@@ -62,16 +66,8 @@ class TestAbs(unittest.TestCase):
 
         # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
         assert "Congratulations! You have successfully registered!" == welcome_text
-if __name__ == "__main__":
-    unittest.main()
-    
-    
-# class TestAbs(unittest.TestCase):
-    # def test_abs1(self):
-        # self.assertEqual(abs(-42), 42, "Should be absolute value of a number")
-        
-    # def test_abs2(self):
-        # self.assertEqual(abs(-42), -42, "Should be absolute value of a number")
-        
-# if __name__ == "__main__":
-    # unittest.main()
+    finally:
+        # ожидание чтобы визуально оценить результаты прохождения скрипта
+        time.sleep(1)
+        # закрываем браузер после всех манипуляций
+        browser.quit()

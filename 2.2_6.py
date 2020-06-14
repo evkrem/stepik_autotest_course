@@ -13,7 +13,6 @@ try:
     y = calc(x)
     print("y=: ", y)
     
-  
  
     input1 = browser.find_element_by_id("answer")
     input1.send_keys(y)

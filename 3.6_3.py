@@ -1,11 +1,19 @@
+from selenium import webdriver
 import time
 import math
 import pytest
 
 itog = ""
+@pytest.fixture
+def browser():
+    print("\nstart browser for test..")
+    browser = webdriver.Chrome()
+    yield browser
+    print("\nquit browser..")
+    browser.quit()
+    print(itog)
 
-
-@pytest.mark.parametrize('link', ["https://stepik.org/lesson/236905/step/1"])
+@pytest.mark.parametrize('link', ["https://stepik.org/lesson/236895/step/1", "https://stepik.org/lesson/236896/step/1", "https://stepik.org/lesson/236897/step/1", "https://stepik.org/lesson/236898/step/1", "https://stepik.org/lesson/236899/step/1", "https://stepik.org/lesson/236903/step/1", "https://stepik.org/lesson/236904/step/1", "https://stepik.org/lesson/236905/step/1"])
 
 def test_links(browser, link):    
     browser.get(link)
@@ -26,4 +34,4 @@ def test_links(browser, link):
     except AssertionError:
         itog += tx  # собираем ответ про Сов с каждой ошибкой
 
-print(itog)
+
