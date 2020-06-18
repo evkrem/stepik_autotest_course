@@ -122,12 +122,11 @@ pytest -s -v -m "smoke or regression" test_fixture8.py
 
 чтобы пропустить тест, его отмечают в коде как @pytest.mark.skip:
 
+Запус для фаерфокса - добавляем параметр --browser_name=firefox, т.к. хром прописан как дефолтный браузер в conftest.py:
+pytest -s -v --browser_name=firefox test_parser.py
 
-
-
-
-
-
+Перезапуск тестов. Для перезапуска установим в вирт.окржение плагин pip install pytest-rerunfailures==7.0
+pytest -v --tb=line --reruns 1 test_rerun.py   //"--reruns n", где n - это количество перезапусков, параметр "--tb=line", чтобы сократить лог с результатами теста
 
 
 
